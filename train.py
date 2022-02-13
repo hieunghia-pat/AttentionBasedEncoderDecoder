@@ -102,7 +102,7 @@ def train():
                 dropout=config.dropout)
 
     model.to(device)
-    criterion = LabelSmoothingLoss(train_dataset.max_len, vocab.padding_idx, smoothing=config.smoothing).to(device)
+    criterion = LabelSmoothingLoss(vocab, smoothing=config.smoothing).to(device)
     model_opt = Adam(model.parameters(), lr=config.learning_rate)
 
     if config.start_from:

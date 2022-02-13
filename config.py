@@ -1,6 +1,6 @@
 # dataset configuration
 batch_train = 32
-batch_test = 2
+batch_test = 1
 image_dirs = [
                 "../UIT-HWDB-dataset/UIT_HWDB_line_v2/train_data",
                 "../UIT-HWDB-dataset/UIT_HWDB_line_v2/test_data"
@@ -23,7 +23,7 @@ d_model = 256
 image_channel = 3
 embedding_dim = 300
 dropout = 0.5
-extractor = "resnext101"
+extractor = "resnet101"
 
 ## training configuration
 max_epoch = 500
