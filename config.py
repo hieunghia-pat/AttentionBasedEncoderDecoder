@@ -27,7 +27,7 @@ extractor = "resnet101"
 
 ## training configuration
 max_epoch = 500
-learning_rate = 1
+learning_rate = 1e-3
 checkpoint_path = "saved_models/UIT-HWDB-line-character-level"
 start_from = None
 smoothing = 0.1
