@@ -1,4 +1,4 @@
-## Attention-Based Encoder Decoder for Vietnamese Handwriting Recognition
+Attention-Based Encoder Decoder for Vietnamese Handwriting Recognition
 ---
 
 ![The original Attention-based Encoder Decoder's structure](images/structure.png)
