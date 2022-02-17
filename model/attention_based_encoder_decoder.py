@@ -40,7 +40,7 @@ class AttentionBasedEncoderDecoder(nn.Module):
         encoded_features, hidden_states = self.encoder(features)
         bs = images.shape[0]
         # applying the teacher-forcing mechanisms
-        targets = torch.tensor([vocab.sos_idx]*bs, dtype=images.dtype, device=images.device).reshape(bs, 1)
+        targets = torch.tensor([vocab.sos_idx]*bs, dtype=torch.int, device=images.device).reshape(bs, 1)
         cell_states = torch.zeros_like(hidden_states)
         for t in range(max_len):
             input = targets[:, -1].unsqueeze(-1)
