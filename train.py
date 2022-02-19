@@ -1,6 +1,6 @@
 import pickle
 import torch
-from torch.optim import Adam
+from torch.optim import Adam, Adadelta
 from torch.utils.data.dataloader import DataLoader
 from metric_utils.metrics import Metrics
 from metric_utils.tracker import Tracker
@@ -103,7 +103,7 @@ def train():
 
     model.to(device)
     criterion = LabelSmoothingLoss(vocab, smoothing=config.smoothing).to(device)
-    model_opt = Adam(model.parameters(), lr=config.learning_rate)
+    model_opt = Adadelta(model.parameters(), lr=config.learning_rate)
 
     if config.start_from:
         saved_info = torch.load(config.start_from, map_location=device)
